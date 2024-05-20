@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio - Comunidad de Jardinería</title>
+  <!-- Enlace a Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Estilos personalizados -->
+  <link href="styles.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <style>
+    .navbar {
+      background-color: #079629; /* Verde */
+    }
+
+    .navbar-nav .nav-link {
+      color: #000000; /* Texto negro */
+    }
+
+    .navbar-nav .nav-link:hover {
+      background-color: #218838; /* Verde oscuro al pasar el mouse */
+    }
+
+    .navbar-nav .nav-link:focus {
+      background-color: #5cb85c; /* Verde claro al hacer clic */
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Comunidad de Jardinería</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="Inicio.html">Inicio</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Productos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="Productos.html" onclick="mostrarProductos('macetas')">Macetas</a>
+            <a class="dropdown-item" href="Productostierra.html" onclick="mostrarProductos('tierra_de_hojas')">Tierra de Hojas</a>
+            <a class="dropdown-item" href="Productossemillas.html" onclick="mostrarProductos('semillas')">Semillas</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Donaciones.html">Donaciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Iniciosesion.html">Iniciar sesión / Registro</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Carrodecompras.html">Carrito</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Contenido -->
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-6">
+        <!-- Formulario de Registro -->
+        <h2>Registro</h2>
+        <form id="registerForm">
+          <div class="form-group mb-3">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" required>
+          </div>
+          <div class="form-group mb-3">
+            <label for="email">Correo electrónico</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+          <div class="form-group mb-3">
+            <label for="password">Contraseña</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Registrarse</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <!-- Formulario de Inicio de Sesión -->
+        <h2>Iniciar sesión</h2>
+        <form id="loginForm">
+          <div class="form-group mb-3">
+            <label for="emailLogin">Correo electrónico</label>
+            <input type="email" class="form-control" id="emailLogin" name="email" required>
+          </div>
+          <div class="form-group mb-3">
+            <label for="passwordLogin">Contraseña</label>
+            <input type="password" class="form-control" id="passwordLogin" name="password" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Enlaces a scripts de Bootstrap y jQuery (opcional) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Script de validación con jQuery -->
+  <script>
+    $(document).ready(function() {
+      $('#registerForm').submit(function(event) {
+        event.preventDefault();
+        var nombre = $('#nombre').val();
+        var email = $('#email').val();
+        var password = $('#password').val();
+  
+        if (nombre === '' || email === '' || password === '') {
+          alert('Todos los campos son obligatorios.');
+          return;
+        }
+  
+        if (!validateEmail(email)) {
+          alert('Por favor, introduce un correo electrónico válido.');
+          return;
+        }
+  
+        // Almacenar los datos del usuario en el localStorage
+        localStorage.setItem('nombre', nombre);
+        localStorage.setItem('email', email);
+        localStorage.setItem('password', password);
+  
+        alert('Registro exitoso.');
+      });
+  
+      $('#loginForm').submit(function(event) {
+        event.preventDefault();
+        var email = $('#emailLogin').val();
+        var password = $('#passwordLogin').val();
+  
+        if (email === '' || password === '') {
+          alert('Todos los campos son obligatorios.');
+          return;
+        }
+  
+        if (!validateEmail(email)) {
+          alert('Por favor, introduce un correo electrónico válido.');
+          return;
+        }
+  
+        // Verificar las credenciales del usuario almacenadas en el localStorage
+        var storedEmail = localStorage.getItem('email');
+        var storedPassword = localStorage.getItem('password');
+  
+        if (email === storedEmail && password === storedPassword) {
+          alert('Inicio de sesión exitoso.');
+        } else {
+          alert('Correo electrónico o contraseña incorrectos.');
+        }
+      });
+  
+      function validateEmail(email) {
+        var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }
+    });
+  </script>
+</body>
+</html>

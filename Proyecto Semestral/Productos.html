@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio - Comunidad de Jardinería</title>
+  <!-- Enlace a Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Estilos personalizados -->
+  <link href="styles.css" rel="stylesheet">
+  <style>
+    .navbar {
+      background-color: #079629; /* Verde */
+    }
+
+    .navbar-nav .nav-link {
+      color: #000000; /* Texto blanco */
+    }
+
+    .navbar-nav .nav-link:hover {
+      background-color: #218838; /* Verde oscuro al pasar el mouse */
+    }
+
+    .navbar-nav .nav-link:focus {
+      background-color: #5cb85c; /* Verde claro al hacer clic */
+    }
+    .navbar{background-color: #5cb85c;}
+  </style>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Comunidad de Jardinería</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="Inicio.html">Inicio</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Productos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="Productos.html" onclick="mostrarProductos('macetas')">Macetas</a>
+            <a class="dropdown-item" href="Productostierra.html" onclick="mostrarProductos('tierra_de_hojas')">Tierra de Hojas</a>
+            <a class="dropdown-item" href="Productossemillas.html" onclick="mostrarProductos('semillas')">Semillas</a>
+          </div>
+        <li class="nav-item">
+          <a class="nav-link" href="Donaciones.html">Donaciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Iniciosesion.html">Iniciar sesión / Registro</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="Carrodecompras.html">Carrito</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Contenido -->
+  <div class="container mt-4">
+    <h2>Macetas</h2>
+    <div class="row">
+      <!-- Card de producto -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="imagenes/macetero1.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Verde Vida</h5>
+            <p class="card-text"> "El macetero 'Verde Vida' está hecho de cerámica de alta calidad y tiene un tamaño de 25 cm de diámetro y 20 cm de altura. Su diseño elegante y minimalista complementa cualquier espacio, brindando un amplio espacio para que tus plantas crezcan felices."</p>
+            <h4>$10000</h4>
+            <button class="btn btn-primary ver-detalle" data-toggle="modal" data-target="#detalleProductoModal" data-nombre="Verde Vida" data-descripcion="El macetero Verde Vida ">Ver Detalles</button>
+            <button class="btn btn-primary agregar-carrito" data-nombre="Verde Vida" data-cantidad="1" data-precio="10000">Agregar al Carrito</button>
+          </div>
+        </div>
+      </div>
+      <!-- Card de producto -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="imagenes/mecetero2.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Florece en Casa</h5>
+            <p class="card-text">"El macetero 'Florece en Casa' está fabricado en plástico resistente y tiene un tamaño de 40 cm de diámetro y 30 cm de altura. Su diseño versátil se adapta a cualquier estilo de decoración, ofreciendo espacio suficiente para que tus plantas crezcan y florezcan."</p>
+            <h4>$7000</h4>
+            <button class="btn btn-primary agregar-carrito" data-nombre="Florece en Casa" data-cantidad="1" data-precio="7000">Agregar al Carrito</button>
+          </div>
+        </div>
+      </div>
+      <!-- Card de producto -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="imagenes/macetero3.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Jardín Urbano</h5>
+            <p class="card-text">"El macetero 'Jardín Urbano' es de metal resistente y tiene un tamaño de 20 cm de ancho, 60 cm de alto y 15 cm de profundidad. Perfecto para espacios urbanos, su diseño compacto te permite crear un pequeño jardín vertical en tu hogar o balcón."</p>
+            
+            <h4>$5000</h4>
+            <button class="btn btn-primary agregar-carrito" data-nombre="Jardín Urbano" data-cantidad="1" data-precio="5000">Agregar al Carrito</button>
+          </div>
+        </div>
+      </div>
+      <!-- Agregar más cards de productos aquí -->
+    </div>
+  </div>
+      <!-- Modal -->
+  <div class="modal fade" id="detalleProductoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Detalles del Producto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Aquí se mostrarán los detalles del producto -->
+          <p id="detalleProducto">fsdfsdfsdfdfsdfsdfsdf</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" id="agregarCarrito">Agregar al Carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <!-- Enlaces a scripts de Bootstrap y jQuery (opcional) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    $('.agregar-carrito').click(function() {
+      var nombreProducto = $(this).data('nombre');
+      var cantidadProducto = $(this).data('cantidad');
+      var precioProducto = $(this).data('precio');
+      var producto = { nombre: nombreProducto, cantidad: cantidadProducto, precio: precioProducto };
+      
+      // Guardar el producto en el localStorage para simular un carrito
+      var carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      carrito.push(producto);
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+  
+      alert(nombreProducto + " agregado al carrito");
+    });
+  </script>
+</body>
+</html>
