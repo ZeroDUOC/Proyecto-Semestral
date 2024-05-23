@@ -24,6 +24,11 @@
     .navbar-nav .nav-link:focus {
       background-color: #00bbb2; /* Verde claro al hacer clic */
     }
+
+    /* Añadir estilo para el fondo de la página */
+    body {
+      background-color: #ABF8E4; /* Verde agua */
+    }
   </style>
 </head>
 <body>
@@ -32,7 +37,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">
-      <img src="imagenes/logo.png"  height="70" class="d-inline-block align-top" alt="Logo">
+      <img src="imagenes/logojar.png"  height="70" class="d-inline-block align-top" alt="Logo">
     </a>
     <a class="navbar-brand" href="#"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -77,7 +82,7 @@
             <h5 class="card-title">Tierra Nutritiva </h5>
             <p class="card-text"> "Mezcla rica en nutrientes para un crecimiento vigoroso de las plantas."</p>
             <h4>$10000</h4>
-            <button class="btn btn-primary ver-detalle" data-toggle="modal" data-target="#detalleProductoModal" data-nombre="Verde Vida" data-descripcion="El ma cerámica de alta calidad y minimalista comp">Ver Detalles</button>
+            <button class="btn btn-primary ver-detalle" data-toggle="modal" data-target="#detalleProductoModal1" data-nombre="Verde Vida" data-descripcion="El ma cerámica de alta calidad y minimalista comp">Ver Detalles</button>
             <button class="btn btn-primary agregar-carrito" data-nombre="Tierra Nutritiva" data-precio="10000">Agregar al Carrito</button>
           </div>
         </div>
@@ -90,7 +95,7 @@
             <h5 class="card-title">Tierra Verde Vital</h5>
             <p class="card-text">"Mezcla orgánica premium que promueve la vitalidad de las plantas."</p>
             <h4>$7000</h4>
-            <button class="btn btn-primary ver-detalle" data-toggle="modal" data-target="#detalleProductoModal" data-nombre="Verde Vida" data-descripcion="El ma cerámica de alta calidad y minimalista comp">Ver Detalles</button>
+            <button class="btn btn-primary ver-detalle" data-toggle="modal" data-target="#detalleProductoModal2" data-nombre="Verde Vida" data-descripcion="El ma cerámica de alta calidad y minimalista comp">Ver Detalles</button>
             <button class="btn btn-primary agregar-carrito" data-nombre="Tierra Verde Vital" data-precio="7000">Agregar al Carrito</button>
           </div>
         </div>
@@ -98,12 +103,12 @@
       <!-- Card de producto -->
       <div class="col-md-4 mb-4">
         <div class="card">
-          <img src="imagenes/macetero3.jpg" class="card-img-top" alt="...">
+          <img src="imagenes/tierra de Hojas 2.webp" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Tierra Fresca de Jardín</h5>
             <p class="card-text"> "Sustrato equilibrado para un jardín exuberante y saludable."</p>
             <h4>$5000</h4>
-            <button class="btn btn-primary ver-detalle" data-toggle="modal" data-target="#detalleProductoModal" data-nombre="Verde Vida" data-descripcion="El ma cerámica de alta calidad y minimalista comp">Ver Detalles</button>
+            <button class="btn btn-primary ver-detalle" data-toggle="modal" data-target="#detalleProductoModal3" data-nombre="Verde Vida" data-descripcion="El ma cerámica de alta calidad y minimalista comp">Ver Detalles</button>
             <button class="btn btn-primary agregar-carrito" data-nombre="Tierra Fresca de Jardín" data-precio="5000">Agregar al Carrito</button>
           </div>
         </div>
@@ -111,8 +116,8 @@
       <!-- Agregar más cards de productos aquí -->
     </div>
   </div>
-      <!-- Modal -->
-  <div class="modal fade" id="detalleProductoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <!-- Modal 1-->
+  <div class="modal fade" id="detalleProductoModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -123,16 +128,90 @@
         </div>
         <div class="modal-body">
           <!-- Aquí se mostrarán los detalles del producto -->
-          <p id="detalleProducto"></p>
+          <p id="detalleProducto">
+            <li>Producto: Tierra Nutritiva</li>
+            <li>Descripción: Mezcla rica en nutrientes para promover un crecimiento vigoroso de las plantas.</li>
+              Características
+            <li>Mezcla especialmente formulada para proporcionar a las plantas los nutrientes necesarios para un desarrollo saludable.</li>
+            <li>Enriquecida con nutrientes esenciales como nitrógeno, fósforo y potasio para estimular el crecimiento de raíces fuertes y un follaje exuberante.</li>
+            <li>Ideal para una amplia variedad de plantas de interior y exterior.</li>
+            <li>Proporciona un sustrato nutritivo que mejora la retención de agua y la aireación del suelo.</li>
+            <li>Favorece la salud del suelo y promueve un entorno óptimo para el desarrollo de las plantas.</li>
+            
+          </p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary" id="agregarCarrito">Agregar al Carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div class="modal fade" id="detalleProductoModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Detalles del Producto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Aquí se mostrarán los detalles del producto -->
+          <p id="detalleProducto">
+            <li>Producto: Tierra Verde Vital</li>
+            <li>Descripción: Mezcla orgánica premium diseñada para promover la vitalidad de las plantas.</li>
+            Características:
+
+            <li>Mezcla de alta calidad elaborada con ingredientes orgánicos seleccionados para proporcionar nutrientes esenciales y promover un crecimiento saludable.</li>
+            <li>Enriquecida con una combinación equilibrada de materia orgánica, minerales y microorganismos beneficiosos que mejoran la estructura y la fertilidad del suelo.</li>
+            <li>Estimula el desarrollo de raíces fuertes y robustas, así como un follaje exuberante y vibrante.</li>
+            <li>Fomenta la resistencia natural de las plantas a enfermedades y plagas, promoviendo su salud general y su capacidad de floración.</li>
+            <li>Ideal para todo tipo de plantas de interior y exterior, proporcionando un entorno óptimo para su crecimiento y desarrollo.</li>
+            
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3 -->
+  <div class="modal fade" id="detalleProductoModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Detalles del Producto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Aquí se mostrarán los detalles del producto -->
+          <p id="detalleProducto">
+            <li>Producto: Tierra Fresca de Jardín</li>
+            <li>Descripción: Sustrato equilibrado diseñado para promover un jardín exuberante y saludable.</li>
+            Características:
+
+            <li>Sustrato de alta calidad formulado con una combinación precisa de nutrientes esenciales para el crecimiento de las plantas en el jardín.</li>
+            <li>Proporciona un ambiente óptimo para el enraizamiento saludable, el crecimiento vigoroso y la floración abundante de una variedad de plantas.</li>
+            <li>Mejora la estructura del suelo, aumentando su capacidad de retención de agua y nutrientes, y promoviendo un drenaje adecuado para prevenir problemas de encharcamiento.</li>
+            <li>Ayuda a mantener un equilibrio adecuado de aireación y humedad en el suelo, creando las condiciones ideales para el desarrollo de raíces fuertes y el bienestar general de las plantas.</li>
+            <li>Ideal para su uso en macetas, jardineras y parterres, proporcionando un sustrato nutritivo y saludable para un jardín exuberante y vibrante.</li>
+            
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>
   </div>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
   <footer>
     <div class="container">
       <div class="row">
